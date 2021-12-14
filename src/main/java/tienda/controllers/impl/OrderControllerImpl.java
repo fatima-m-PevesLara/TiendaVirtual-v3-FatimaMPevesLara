@@ -55,7 +55,7 @@ public class OrderControllerImpl implements OrderController {
         order.setEstadoPedido( new PedidoCreado() );
         order.procesar();
 
-        Cliente cliObj = (Cliente)customerRepository.find("616f797ea7539a581e64e7e8");
+        Cliente cliObj = (Cliente)customerRepository.find("61b837e12564a2724cd84cb5");
         order.setClienteObj( cliObj );
         System.out.println( cliObj.imprimeDatosCliente() );
 

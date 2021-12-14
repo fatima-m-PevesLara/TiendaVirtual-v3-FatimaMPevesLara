@@ -20,7 +20,7 @@ public class PedidoPorEntregar implements IEstadoPedido {
         System.out.println("Entregando pedido: " + pedido.getId());
         System.out.println("Pedido Entregado.");
 
-        pedido.setEstadoPedido( new PedidoFinalizado() );
+        pedido.setEstadoPedido( new PedidoEntregado() );
     }
 
     public String getId() {

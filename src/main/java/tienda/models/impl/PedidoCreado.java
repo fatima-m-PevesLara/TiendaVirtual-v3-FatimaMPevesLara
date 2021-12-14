@@ -8,6 +8,7 @@ import tienda.models.interfaces.IEstadoPedido;
 public class PedidoCreado implements IEstadoPedido {
 
     private String id;
+    private boolean pagoConcretado;
 
     public PedidoCreado()   {
     }
@@ -23,7 +24,12 @@ public class PedidoCreado implements IEstadoPedido {
                 
         System.out.println("Pedido creado con monto: " + pedido.getMontoTotal() );
 
-        pedido.setEstadoPedido( new PedidoValidado() );
+        if (pagoConcretado){
+            pedido.setEstadoPedido( new PedidoValidado() );
+        }
+        else {
+            pedido.setEstadoPedido(new PedidoAnulado());
+        }
     }
 
     public String getId() {
